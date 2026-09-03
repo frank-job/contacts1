@@ -1,0 +1,20 @@
+{
+  "name": "contacts1",
+  "version": "1.0.0",
+  "description": "web service is tough",
+  "homepage": "https://github.com/frank-job/contacts1#readme",
+  "bugs": {
+    "url": "https://github.com/frank-job/contacts1/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frank-job/contacts1.git"
+  },
+  "license": "ISC",
+  "author": "Frank Tech",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
