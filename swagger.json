@@ -8,7 +8,7 @@
   "host": "contacts1-e96w.onrender.com/",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
