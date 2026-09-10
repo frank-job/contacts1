@@ -21,7 +21,63 @@ const getSingle = async(req, res) => {
     })
 }
 
+const createUsers = async(req, res) => {
+  const user = {
+    email: req.body.email,
+    userName: req.body.userName,
+    ipaddress: req.body.ipaddress
+    }
+
+    const response = await mongodb.getDatabase().collection('users').insertOne(user)
+
+    if(response.acknowledged ) {
+          res.status(201).json(response.insertedId);
+    } else {
+        res.status(500).json(response.error || 'Error when Creating user')
+    }
+  
+
+}
+
+
+
+const updateUsers = async(req, res) => {
+  const userId = new ObjectId(req.params.id);
+  const user = {
+    email: req.body.email,
+    userName: req.body.userName,
+    ipaddress: req.body.ipaddress
+  
+    }
+
+    const response = await mongodb.getDatabase().collection('users').replaceOne({_id: userId}, user)
+    if(response.modifiedCount > 0) {
+          res.status(204).send();
+    } else {
+        res.status(500).json(response.error || 'Error when updating user')
+    }
+  
+
+}
+
+const deleteUsers = async(req, res) => {
+  const userId = new ObjectId(req.params.id);
+
+    const response = await mongodb.getDatabase().collection('users').deleteOne({_id: userId})
+    if(response.deletedCount > 0) {
+          res.status(204).send();
+    } else {
+        res.status(500).json(response.error || 'Error when deleting user')
+    }
+  
+
+}
+
+
 module.exports = {
     getAll,
-    getSingle
+    getSingle,
+    createUsers,
+    updateUsers,
+    deleteUsers
 };
