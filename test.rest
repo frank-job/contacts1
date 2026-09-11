@@ -19,6 +19,9 @@ GET https://contacts1-e96w.onrender.com/users
 ### Get all users
 GET http://localhost:3000/users
 
+### Get all contacts
+GET http://localhost:3000/contacts
+
 ### Open Swagger API documentation
 GET http://localhost:3000/api-docs
 
@@ -26,28 +29,29 @@ GET http://localhost:3000/api-docs
 GET http://localhost:3000/users/6a99802ee4fa31a2afcbc7e6
 
 ### Create contact
-POST http://localhost:3000/users HTTP/1.1
+POST http://localhost:3000/contacts HTTP/1.1
 content-type: application/json
 
 {
-  "email": "examle@email.com",
-    "username": "ee@email.com",
-    "name": "You Name",
-    "ipaddress": "120.0.1"
+  "firstName": "Your",
+  "lastName": "Name",
+  "email": "example@email.com",
+  "favoriteColor": "blue",
+  "birthday": "2000-01-01"
 }
 
 ### Update contact
-PUT http://localhost:3000/users/6a99802ee4fa31a2afcbc7e6 HTTP/1.1
+PUT http://localhost:3000/contacts/6a99802ee4fa31a2afcbc7e6 HTTP/1.1
 content-type: application/json
 
 {
-  
-  "username": "Birch",
+  "firstName": "Updated",
+  "lastName": "Contact",
   "email": "test@gmail.com",
-    "name": "You ame",
-    "ipaddress": "120.0.1"
+  "favoriteColor": "green",
+  "birthday": "2001-02-02"
 }
 
 # delete user 
 
-DELETE  http://localhost:3000/users/6a99802ee4fa31a2afcbc7e6 HTTP/1.1
+DELETE  http://localhost:3000/contacts/6a99802ee4fa31a2afcbc7e6 HTTP/1.1
