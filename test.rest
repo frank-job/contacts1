@@ -3,12 +3,12 @@
 # returns hello world like home page 
 GET https://contacts1-e96w.onrender.com/
 
-# returns all users
-GET https://contacts1-e96w.onrender.com/users
+# returns contacts stored in MongoDB
+GET https://contacts1-e96w.onrender.com/contacts
 
 
-# returns by id
-# GET https://contacts1-e96w.onrender.com/users/6a99802ee4fa31a2afcbc7e6
+# returns one contact by MongoDB id
+# GET https://contacts1-e96w.onrender.com/contacts/CONTACT_ID
 
 
 # https://youtu.be/nW7x_RbhIc8
@@ -16,42 +16,11 @@ GET https://contacts1-e96w.onrender.com/users
 
 
 
-### Get all users
-GET http://localhost:3000/users
-
 ### Get all contacts
 GET http://localhost:3000/contacts
 
 ### Open Swagger API documentation
 GET http://localhost:3000/api-docs
 
-### Get contact by id
-GET http://localhost:3000/users/6a99802ee4fa31a2afcbc7e6
-
-### Create contact
-POST http://localhost:3000/contacts HTTP/1.1
-content-type: application/json
-
-{
-  "firstName": "Your",
-  "lastName": "Name",
-  "email": "example@email.com",
-  "favoriteColor": "blue",
-  "birthday": "2000-01-01"
-}
-
-### Update contact
-PUT http://localhost:3000/contacts/6a99802ee4fa31a2afcbc7e6 HTTP/1.1
-content-type: application/json
-
-{
-  "firstName": "Updated",
-  "lastName": "Contact",
-  "email": "test@gmail.com",
-  "favoriteColor": "green",
-  "birthday": "2001-02-02"
-}
-
-# delete user 
-
-DELETE  http://localhost:3000/contacts/6a99802ee4fa31a2afcbc7e6 HTTP/1.1
+### Get one contact from MongoDB
+GET http://localhost:3000/contacts/CONTACT_ID
